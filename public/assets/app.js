@@ -1,0 +1,18 @@
+'use strict';
+// Ошибки показываются рядом с формой; сервер повторяет проверку.
+for (const form of document.querySelectorAll('[data-validate]')) {
+    form.noValidate = true;
+    form.addEventListener('submit', event => {
+        const error = form.querySelector('.client-error');
+        const invalid = [...form.elements].find(field => field.willValidate && !field.validity.valid);
+        if (invalid) {
+            event.preventDefault();
+            error.textContent = invalid.validationMessage;
+            invalid.setAttribute('aria-invalid', 'true');
+            invalid.focus();
+        } else {
+            error.textContent = '';
+        }
+    });
+    form.addEventListener('input', event => event.target.removeAttribute('aria-invalid'));
+}
