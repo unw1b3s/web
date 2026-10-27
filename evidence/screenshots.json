@@ -1,0 +1,176 @@
+[
+  {
+    "practice": 1,
+    "screenshot": "practices/01 Анализ предметной области и требования/screenshot.png",
+    "report": "practices/01 Анализ предметной области и требования/report-screen.png",
+    "source": "Снимок результата в браузере"
+  },
+  {
+    "practice": 2,
+    "screenshot": "practices/02 Проектирование базы данных и ER-диаграмма/screenshot.png",
+    "report": "practices/02 Проектирование базы данных и ER-диаграмма/report-screen.png",
+    "source": "Снимок результата в браузере"
+  },
+  {
+    "practice": 3,
+    "screenshot": "practices/03 Разработка модулей ИС/screenshot.png",
+    "report": "practices/03 Разработка модулей ИС/report-screen.png",
+    "source": "Снимок работающего приложения"
+  },
+  {
+    "practice": 4,
+    "screenshot": "practices/04 Подсистема безопасности/screenshot.png",
+    "report": "practices/04 Подсистема безопасности/report-screen.png",
+    "source": "Снимок работающего приложения"
+  },
+  {
+    "practice": 5,
+    "screenshot": "practices/05 Поиск и анализ информации/screenshot.png",
+    "report": "practices/05 Поиск и анализ информации/report-screen.png",
+    "source": "Снимок результата в браузере"
+  },
+  {
+    "practice": 6,
+    "screenshot": "practices/06 Требования к дизайну/screenshot.png",
+    "report": "practices/06 Требования к дизайну/report-screen.png",
+    "source": "Снимок результата в браузере"
+  },
+  {
+    "practice": 7,
+    "screenshot": "practices/07 Дизайн-концепция/screenshot.png",
+    "report": "practices/07 Дизайн-концепция/report-screen.png",
+    "source": "Снимок результата в браузере"
+  },
+  {
+    "practice": 8,
+    "screenshot": "practices/08 Современный и мобильный дизайн/screenshot.png",
+    "report": "practices/08 Современный и мобильный дизайн/report-screen.png",
+    "source": "Снимок результата в браузере"
+  },
+  {
+    "practice": 9,
+    "screenshot": "practices/09 Улучшение форм и интерфейса/screenshot.png",
+    "report": "practices/09 Улучшение форм и интерфейса/report-screen.png",
+    "source": "Снимок работающего приложения"
+  },
+  {
+    "practice": 10,
+    "screenshot": "practices/10 Разработка интерфейса пользователя/screenshot.png",
+    "report": "practices/10 Разработка интерфейса пользователя/report-screen.png",
+    "source": "Снимок работающего приложения"
+  },
+  {
+    "practice": 11,
+    "screenshot": "practices/11 Разработка веб-приложения/screenshot.png",
+    "report": "practices/11 Разработка веб-приложения/report-screen.png",
+    "source": "Снимок работающего приложения"
+  },
+  {
+    "practice": 12,
+    "screenshot": "practices/12 Доработка структуры БД/screenshot.png",
+    "report": "practices/12 Доработка структуры БД/report-screen.png",
+    "source": "Снимок результата в браузере"
+  },
+  {
+    "practice": 13,
+    "screenshot": "practices/13 Интеграция адаптивного дизайна/screenshot.png",
+    "report": "practices/13 Интеграция адаптивного дизайна/report-screen.png",
+    "source": "Снимок работающего приложения"
+  },
+  {
+    "practice": 14,
+    "screenshot": "practices/14 Анимация и микро-анимации/screenshot.png",
+    "report": "practices/14 Анимация и микро-анимации/report-screen.png",
+    "source": "Снимок работающего приложения"
+  },
+  {
+    "practice": 15,
+    "screenshot": "practices/15 Оптимизация кода и производительности/screenshot.png",
+    "report": "practices/15 Оптимизация кода и производительности/report-screen.png",
+    "source": "Снимок результата в браузере"
+  },
+  {
+    "practice": 16,
+    "screenshot": "practices/16 Финальное тестирование/screenshot.png",
+    "report": "practices/16 Финальное тестирование/report-screen.png",
+    "source": "Снимок результата в браузере"
+  },
+  {
+    "practice": 17,
+    "screenshot": "practices/17 Адаптация тематики ИС/screenshot.png",
+    "report": "practices/17 Адаптация тематики ИС/report-screen.png",
+    "source": "Снимок работающего приложения"
+  },
+  {
+    "practice": 18,
+    "screenshot": "practices/18 Тестирование вариативной части/screenshot.png",
+    "report": "practices/18 Тестирование вариативной части/report-screen.png",
+    "source": "Снимок работающего приложения"
+  },
+  {
+    "practice": 20,
+    "screenshot": "practices/20 Разбор ошибок и план устранения пробелов/screenshot.png",
+    "report": "practices/20 Разбор ошибок и план устранения пробелов/report-screen.png",
+    "source": "Снимок результата в браузере"
+  },
+  {
+    "practice": 7,
+    "file": "mockup-account.html",
+    "overflow": false
+  },
+  {
+    "practice": 7,
+    "file": "mockup-admin.html",
+    "overflow": false
+  },
+  {
+    "practice": 7,
+    "file": "mockup-applications.html",
+    "overflow": false
+  },
+  {
+    "practice": 7,
+    "file": "mockup-apply.html",
+    "overflow": false
+  },
+  {
+    "practice": 7,
+    "file": "mockup-login.html",
+    "overflow": false
+  },
+  {
+    "practice": 7,
+    "file": "mockup-register.html",
+    "overflow": false
+  },
+  {
+    "practice": 8,
+    "file": "mobile-account.html",
+    "overflow": false
+  },
+  {
+    "practice": 8,
+    "file": "mobile-admin.html",
+    "overflow": false
+  },
+  {
+    "practice": 8,
+    "file": "mobile-applications.html",
+    "overflow": false
+  },
+  {
+    "practice": 8,
+    "file": "mobile-apply.html",
+    "overflow": false
+  },
+  {
+    "practice": 8,
+    "file": "mobile-login.html",
+    "overflow": false
+  },
+  {
+    "practice": 8,
+    "file": "mobile-register.html",
+    "overflow": false
+  }
+]

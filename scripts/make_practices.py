@@ -18,7 +18,7 @@ def mdhtml(text):
 # Векторная диаграмма без сетевых зависимостей.
 boxes=[(25,35,'users',['id INT UNSIGNED PK','login VARCHAR(40) UNIQUE','password_hash VARCHAR(255)','email VARCHAR(254) UNIQUE','phone VARCHAR(12)','role ENUM(participant,admin)']), (715,35,'events',['id INT UNSIGNED PK','title VARCHAR(160)','event_date DATETIME','location VARCHAR(160)','description TEXT','theme ENUM(conference,workshop)']), (370,285,'applications',['id INT UNSIGNED PK','user_id INT UNSIGNED FK','event_id INT UNSIGNED FK','status_id TINYINT UNSIGNED FK','payment ENUM(card,invoice)','room ENUM(main,small,online)','created_at TIMESTAMP','UNIQUE(user_id,event_id)']), (25,365,'statuses',['id TINYINT UNSIGNED PK','code VARCHAR(20) UNIQUE','name VARCHAR(30)']), (715,365,'reviews',['id INT UNSIGNED PK','application_id INT UNSIGNED FK UNIQUE','body TEXT','rating TINYINT UNSIGNED CHECK 1..5','created_at TIMESTAMP'])]
 def diagram(initial=False):
-    b=['<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="680" viewBox="0 0 1060 680"><rect width="1060" height="680" fill="#f7f8fa"/><g fill="none" stroke="#6782aa" stroke-width="2"><path d="M185 255 L185 295 L370 320"/><path d="M875 255 L875 295 L680 320"/>']
+    b=['<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="680" viewBox="0 0 1060 680"><rect width="1060" height="680" fill="#f7f8fa"/><g fill="none" stroke="#6782aa" stroke-width="2"><path d="M185 224 L185 270 L370 320"/><path d="M875 224 L875 270 L680 320"/>']
     if not initial:b.append('<path d="M335 435h35M680 435h35"/>')
     b.append('</g><g font-family="Arial" fill="#202b3c" font-size="13">')
     for x,y,title,fields in boxes:
@@ -112,12 +112,17 @@ plan='''# План устранения пробелов
 Для консультации подготовил вопросы: достаточно ли принятого состава полей заявки для конкретного варианта КИМ; какие требования комиссии к оформлению схем и отчётов; как будет организована итоговая консультация на индивидуальном графике. Консультация пока не проведена.
 '''
 (F[20]/'plan.md').write_text(plan);EXTRA[20]=mdhtml(plan)
+for n in [2,4,12,15]:
+    if (ROOT/'evidence/database.json').exists(): shutil.copy(ROOT/'evidence/database.json',F[n]/'database.json')
+for n in [5,16,18]:
+    if (ROOT/'docs/history.txt').exists(): shutil.copy(ROOT/'docs/history.txt',F[n]/'history.txt')
+if (ROOT/'docs/php-cli.txt').exists(): shutil.copy(ROOT/'docs/php-cli.txt',F[5]/'php-cli.txt')
 # Номера работ и ссылки на единый рабочий код явно указаны в каждом отчёте.
 for n,f in F.items():
     report=f'# Практическая работа №{n}. {NAMES[n]}\n\n{REPORTS[n]}\n\nРабочий код: ../../app, ../../public, ../../database. Скриншот результата: screenshot.png. Проверки и дополнительные материалы перечислены в result.html.\n'
     (f/'report.md').write_text(report)
     files=''.join(f'<li><a href="{h(x.name)}">{h(x.name)}</a></li>' for x in sorted(f.iterdir()) if x.suffix in ['.md','.json','.sql','.svg','.mmd','.txt'])
-    (f/'result.html').write_text(page(NAMES[n],f'<p class="muted">МДК · Индивидуальный график</p><h1>Практическая работа №{n}<br>{h(NAMES[n])}</h1><p>{h(REPORTS[n])}</p>'+EXTRA.get(n,'')+f'<h2>Материалы</h2><ul>{files}</ul><p><a href="../../README.md">Запуск приложения и рабочие исходники</a></p>'))
+    (f/'result.html').write_text(page(NAMES[n],f'<p class="muted">МДК · Индивидуальный график</p><h1>Практическая работа №{n}<br>{h(NAMES[n])}</h1><p>{h(REPORTS[n])}</p>'+EXTRA.get(n,'')+f'<h2>Материалы</h2><ul>{files}</ul><p><a href="screenshot.png">Скриншот результата</a></p><p><a href="../../README.md">Запуск приложения и рабочие исходники</a></p>'))
 (P/'index.html').write_text(page('Практические работы','<h1>Конференции.РФ · Практические работы</h1><p>№1–18 и №20. Рабочее приложение: PHP и MySQL. №19 не выполнялась.</p><ol>'+''.join(f'<li value="{n}"><a href="{h(f.name)}/result.html">{h(NAMES[n])}</a></li>' for n,f in F.items())+'</ol>'))
 (ROOT/'evidence/practice-map.json').write_text(json.dumps({str(n):str(f.relative_to(ROOT)) for n,f in F.items()},ensure_ascii=False,indent=2))
 print('Создано папок:',len(F))
