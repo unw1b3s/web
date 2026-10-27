@@ -1,0 +1,4 @@
+Warning:  Undefined array key "login" in /Users/levvolkov/Documents/ChatGPT/МДК 04.01/web/app/src/Auth.php on line 9
+Warning:  Undefined array key "email" in /Users/levvolkov/Documents/ChatGPT/МДК 04.01/web/app/src/Auth.php on line 11
+Warning:  Undefined array key "phone" in /Users/levvolkov/Documents/ChatGPT/МДК 04.01/web/app/src/Auth.php on line 12
+CSS: 4449 → 4448 байт: исходник почти не уменьшился.

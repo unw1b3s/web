@@ -1,5 +1,6 @@
 <?php
 require __DIR__.'/../app/bootstrap.php';
+ini_set('display_errors','0');
 ini_set('session.use_strict_mode','1');
 session_set_cookie_params(['httponly'=>true,'secure'=>!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']!=='off','samesite'=>'Lax']);
 session_start();
@@ -9,7 +10,8 @@ if (isset($_SESSION['active']) && time()-$_SESSION['active']>1800) { $_SESSION=[
 $_SESSION['active']=time(); $_SESSION['csrf'] ??= bin2hex(random_bytes(32));
 $theme=getenv('APP_THEME')==='workshop' ? 'workshop' : 'conference';
 $title=$theme==='workshop' ? 'Мастерские.РФ' : 'Конференции.РФ';
-$page=$_GET['page'] ?? 'events'; $error=''; $notice=$_SESSION['notice'] ?? ''; unset($_SESSION['notice']);
+$page=is_string($_GET['page'] ?? null) ? $_GET['page'] : 'events';
+if (!in_array($page,['events','register','login','account','apply','applications','admin'],true)) { http_response_code(404); $page='missing'; } $error=''; $notice=$_SESSION['notice'] ?? ''; unset($_SESSION['notice']);
 function redirect(string $page): never { header('Location: /?page='.$page); exit; }
 function csrf(): string { return '<input type="hidden" name="csrf" value="'.e($_SESSION['csrf']).'">'; }
 try {

@@ -5,6 +5,7 @@ final class Auth {
         return isset($_SESSION['uid']) ? ($this->db->query('SELECT id,login,email,phone,role FROM users WHERE id=?',[$_SESSION['uid']])->fetch() ?: null) : null;
     }
     public function register(array $data): void {
+        $data += ['login'=>'','password'=>'','email'=>'','phone'=>''];
         $errors=[];
         if (!preg_match('/^[a-zA-Z0-9_]{3,40}$/D',$data['login'])) $errors[]='Логин: 3–40 латинских букв, цифр или подчёркиваний.';
         if (mb_strlen($data['password'])<8 || strlen($data['password'])>72) $errors[]='Пароль: от 8 символов, не более 72 байт.';
