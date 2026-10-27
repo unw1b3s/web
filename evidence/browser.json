@@ -1,0 +1,50 @@
+{
+  "browser": "156.0.8078.48",
+  "checks": [
+    {
+      "test": "Клиент показывает ошибку пустой формы",
+      "passed": true
+    },
+    {
+      "test": "Заявка из браузера",
+      "passed": true
+    },
+    {
+      "test": "390×844 events",
+      "passed": true
+    },
+    {
+      "test": "390×844 account",
+      "passed": true
+    },
+    {
+      "test": "390×844 applications",
+      "passed": true
+    },
+    {
+      "test": "390×844 apply",
+      "passed": true
+    },
+    {
+      "test": "390×844 register",
+      "passed": true
+    },
+    {
+      "test": "390×844 login",
+      "passed": true
+    },
+    {
+      "test": "390×844 admin",
+      "passed": true
+    },
+    {
+      "test": "Отключение анимаций",
+      "passed": true
+    },
+    {
+      "test": "Нет ошибок JavaScript",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

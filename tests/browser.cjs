@@ -1,7 +1,7 @@
-const {chromium}=require('/Users/levvolkov/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const fs=require('fs');
 (async()=>{
-const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
+const browser=await chromium.launch({executablePath:process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
 const page=await browser.newPage({viewport:{width:1280,height:900}});
 const checks=[]; const errors=[]; page.on('pageerror',e=>errors.push(e.message));
 await page.goto('http://127.0.0.1:8080');
@@ -13,6 +13,8 @@ await page.screenshot({path:'evidence/register-validation.png',fullPage:true});
 await page.goto('http://127.0.0.1:8080/?page=login');
 await page.locator('[name=login]').fill('student');await page.locator('[name=password]').fill('Student123');await page.locator('button').last().click();
 await page.screenshot({path:'evidence/account.png',fullPage:true});
+await page.goto('http://127.0.0.1:8080/?page=applications');
+while(await page.getByRole('button',{name:'Удалить заявку',exact:true}).count()) await page.getByRole('button',{name:'Удалить заявку',exact:true}).first().click();
 await page.goto('http://127.0.0.1:8080/?page=apply');
 await page.locator('[name=event]').selectOption({index:1}); await page.locator('[name=payment]').selectOption('invoice');await page.locator('[name=room]').selectOption('small');await page.locator('button').last().click();
 checks.push({test:'Заявка из браузера',passed:(await page.locator('main').textContent()).includes('Изменения сохранены')});

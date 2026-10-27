@@ -1,0 +1,32 @@
+erDiagram
+    USERS ||--o{ APPLICATIONS : creates
+    EVENTS ||--o{ APPLICATIONS : receives
+    STATUSES ||--o{ APPLICATIONS : sets
+    APPLICATIONS ||--o| REVIEWS : has
+    USERS { int id PK
+      varchar login UK
+      varchar password_hash
+      varchar email UK
+      varchar phone
+      enum role }
+    EVENTS { int id PK
+      varchar title
+      datetime event_date
+      varchar location
+      text description
+      enum theme }
+    APPLICATIONS { int id PK
+      int user_id FK
+      int event_id FK
+      tinyint status_id FK
+      enum payment
+      enum room
+      timestamp created_at }
+    STATUSES { tinyint id PK
+      varchar code UK
+      varchar name }
+    REVIEWS { int id PK
+      int application_id FK,UK
+      text body
+      tinyint rating
+      timestamp created_at }

@@ -1,0 +1,21 @@
+{
+    "server": "8.4.13",
+    "before": {
+        "id": 1,
+        "user_id": 1,
+        "event_id": 1,
+        "status": "assigned"
+    },
+    "after": {
+        "id": 1,
+        "user_id": 1,
+        "event_id": 1,
+        "status": "assigned"
+    },
+    "checks": {
+        "legacy_row_preserved": true,
+        "foreign_key": true,
+        "rating_check": true,
+        "no_orphans": true
+    }
+}
